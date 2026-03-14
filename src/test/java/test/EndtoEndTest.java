@@ -1,10 +1,13 @@
 package test;
 import baseClass.BaseClass;
 import data.SignPojo;
+import data.database;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import pagesObjectModel.*;
 import testcomponents.Listenersclass;
+
+import java.util.List;
 
 @Listeners(Listenersclass.class)
 public class EndtoEndTest extends BaseClass
@@ -37,7 +40,7 @@ public class EndtoEndTest extends BaseClass
     PaymentPage paymentPage;
     OrderConfirmation orderConfirmation;
     SignPojo signPojo = new SignPojo();
-
+//    database  database = new database();
 
 
 
@@ -46,6 +49,7 @@ public class EndtoEndTest extends BaseClass
     public void login()
     {
         login.accAndLogionbtn();
+//        List<String> list = database.getdata();
         login.phoneNofiled(signPojo.getPhno());
         login .setContinueBtn();
         login .enterPass("karthik@27");
