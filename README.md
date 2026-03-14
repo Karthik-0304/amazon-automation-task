@@ -1,314 +1,151 @@
-# Amazon Automation Task
+# Amazon Automation Testing Project
 
-## 📌 Project Overview
-Amazon Automation Task is a Selenium-based UI automation testing project developed using **Java, Selenium WebDriver, TestNG, and Extent Reports**.
+## Project Overview
+This project is an **End-to-End Automation Testing framework** built using **Java, Selenium WebDriver, and TestNG**.
 
-The project automates core user workflows of the Amazon website including **product search, add to cart, cart verification, and payment page navigation**.
+The automation simulates a real user workflow on an e-commerce website, including:
+- Searching for a product
+- Selecting a product
+- Adding the product to the cart
+- Navigating to the payment page
+- Reaching the order confirmation page
 
-It follows a **modular automation framework structure** to maintain scalability, readability, and maintainability.
-
-The framework includes:
-
-- Structured test modules
-- Reusable utilities
-- Page Object Model design
-- Extent Reports for test reporting
-- Automatic screenshot capture for failures
+The framework follows the **Page Object Model (POM)** design pattern to maintain clean and maintainable automation code.
 
 ---
 
-# 🧰 Framework & Technologies Used
+## Technologies Used
 
-| Technology | Purpose |
-|------------|--------|
-| Java | Programming language |
-| Selenium WebDriver | Browser automation |
-| TestNG | Test execution framework |
-| Maven | Dependency management |
-| Extent Reports | Test reporting |
-| ChromeDriver | Browser driver |
-| Page Object Model (POM) | Maintainable automation design |
+- Java
+- Selenium WebDriver
+- TestNG
+- Maven
+- IntelliJ IDEA
+- Git & GitHub
 
 ---
 
-# 📊 Live Automation Report
+## Framework Design
 
-The Extent Report generated during automation execution contains:
+This project follows the **Page Object Model (POM)** architecture.
 
-- Test execution summary
-- Pass / Fail status
-- Execution timeline
-- Screenshots for failed tests
-
-Reports are generated automatically after test execution.
+Each page of the application has a separate class that contains:
+- Web element locators
+- Page actions
+- Reusable methods
 
 ---
 
-# 📂 Project Structure
+## Project Structure
 
 ```
+
 amazon-automation-task
-│
-├── reports
-│   └── screenshots
 │
 ├── src
 │   │
 │   ├── main
 │   │   └── java
 │   │       └── pages
-│   │           ├── LoginPage.java
 │   │           ├── ProductSearch.java
-│   │           ├── CartPage.java
-│   │           └── PaymentPage.java
+│   │           ├── AddToCart.java
+│   │           ├── PaymentPage.java
+│   │           └── OrderConfirmation.java
 │   │
 │   └── test
 │       └── java
-│           │
-│           ├── tests
-│           │   └── EndToEndTest.java
-│           │
-│           ├── testcomponents
-│           │   ├── BaseClass.java
-│           │   └── Listenersclass.java
-│           │
-│           └── utilities
-│               └── ScreenshotUtility.java
-│
-├── resources
-│   └── config.properties
+│           └── tests
+│               └── EndToEndTest.java
 │
 ├── pom.xml
-│
-└── README.md
+└── testng.xml
+
 ```
 
 ---
 
-# 🏗 Framework Architecture
+## Test Flow
 
-The framework follows a layered architecture:
+The automated test performs the following steps:
 
-```
-Test Layer
-   ↓
-Page Object Layer
-   ↓
-Utility Layer
-   ↓
-WebDriver Layer
-```
+1. Launch the browser using Selenium WebDriver  
+2. Navigate to the website  
+3. Search for a product  
+4. Select a product from the search results  
+5. Add the product to the cart  
+6. Proceed to the payment page  
+7. Navigate to the order confirmation page  
 
 ---
 
-# Layers Explanation
+## How to Run the Project
 
-## Test Layer
-Contains all **TestNG test classes** responsible for executing automation scenarios.
-
-## Page Object Layer
-Contains **page classes representing UI pages** and stores **locators and actions**.
-
-Example pages include:
-
-- LoginPage
-- ProductSearch
-- CartPage
-- PaymentPage
-
-## Utility Layer
-Reusable helper classes for:
-
-- Screenshot capture
-- Explicit waits
-- Driver initialization
-- Reporting utilities
-
-## Reporting Layer
-
-Extent Reports generate a **detailed HTML test report** including:
-
-- Execution summary
-- Pass / Fail status
-- Screenshots on failure
-
----
-
-# 🚀 Setup Instructions
-
-## 1️⃣ Clone the Repository
+### 1 Clone the Repository
 
 ```
+
 git clone https://github.com/Karthik-0304/amazon-automation-task.git
-```
-
----
-
-## 2️⃣ Open the Project
-
-Open the project in:
-
-- IntelliJ IDEA  
-OR  
-- Eclipse
-
----
-
-## 3️⃣ Install Dependencies
-
-Run Maven to install required dependencies:
 
 ```
-mvn clean install
-```
 
-Dependencies include:
+### 2 Open the Project
 
-- Selenium WebDriver
-- TestNG
-- Extent Reports
-- commons-io
+Open the project using **IntelliJ IDEA**.
 
----
+### 3 Install Dependencies
 
-# ▶️ How to Run the Automation
+Maven will automatically download the required dependencies from the **pom.xml** file.
 
-### Method 1 — Run using TestNG
+### 4 Run the Test
 
-Run the test class directly:
+Run the test class:
 
 ```
+
 EndToEndTest.java
+
+```
+
+or run using:
+
+```
+
+testng.xml
+
 ```
 
 ---
 
-### Method 2 — Run using Maven
+## Key Features
 
-```
-mvn test
-```
-
----
-
-# 📊 Test Reports
-
-After execution, Extent Reports are generated at:
-
-```
-reports/index.html
-```
-
-The report includes:
-
-- Test execution summary
-- Passed / Failed tests
-- Execution time
-- Screenshot on failure
+✔ End-to-End automation workflow  
+✔ Selenium WebDriver automation  
+✔ TestNG test execution  
+✔ Page Object Model framework  
+✔ Maven dependency management  
 
 ---
 
-# 📸 Screenshots
+## Future Improvements
 
-Screenshots are automatically captured for failed test cases and stored in:
-
-```
-reports/screenshots/
-```
-
-This helps in debugging failures quickly.
+- Integrate Cucumber BDD framework  
+- Add Extent Reports  
+- Add Screenshot capture on failure  
+- Implement logging  
+- Add parallel test execution  
 
 ---
 
-# 🌐 Application Under Test
-
-Main website used for automation:
-
-```
-https://www.amazon.in
-```
-
-Automated workflows include:
-
-- Product Search
-- Product Selection
-- Add to Cart
-- Cart Validation
-- Checkout Navigation
-- Payment Page Verification
-
----
-
-# 🧪 Test Coverage
-
-The automation suite covers the following areas:
-
-- Product search functionality
-- Add to cart validation
-- Cart page verification
-- Checkout flow navigation
-- Payment page loading verification
-- UI interaction validation
-
----
-
-# 🔮 Future Improvements
-
-Planned improvements for the framework:
-
-- CI/CD integration using GitHub Actions
-- Cross-browser testing
-- Parallel execution
-- Data-driven testing
-- Docker-based test execution
-
----
-
-# 🧠 Automation Approach
-
-The automation solution was designed using a **Page Object Model (POM) based framework** to ensure clean separation between test logic and page interactions.
-
-Development approach:
-
-- Explore Amazon user workflows
-- Identify stable locators using browser developer tools
-- Design modular framework using Page Object Model
-- Implement automated test scenarios using TestNG
-- Integrate Extent Reports for execution reporting
-- Capture screenshots automatically on test failures
-
-This approach improves **maintainability, scalability, and readability** of the automation framework.
-
----
-
-# 📄 Solution Summary
-
-This automation project validates key **e-commerce workflows on Amazon** using Selenium automation.
-
-Objectives:
-
-- Automate important user journeys
-- Verify UI interactions
-- Validate product search and cart functionality
-- Generate execution reports for analysis
-
-Key features include:
-
-- Modular Page Object Model framework
-- Structured TestNG execution
-- Extent Reports integration
-- Screenshot capture on failures
-
-The framework is designed to be **scalable and extendable**, allowing additional automation scenarios to be added easily.
-
----
-
-# 👨‍💻 Author
+## Author
 
 **Karthik S**
 
-Automation Enthusiast  
-Java | Selenium | TestNG | Automation Framework Development
-
-GitHub  
+GitHub:  
 https://github.com/Karthik-0304
+
+---
+
+## Note
+
+This project is created for **automation testing learning and practice purposes**.
+```
