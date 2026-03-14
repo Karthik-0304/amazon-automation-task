@@ -1,4 +1,3 @@
-```markdown
 # 🛒 Amazon Automation Testing Project
 
 ## 📌 Project Overview
