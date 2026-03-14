@@ -78,4 +78,10 @@ public class EndtoEndTest extends BaseClass
         orderConfirmation  .OrderChecking();
     }
 
+
+    public void test()
+    {
+
+    }
+
 }
